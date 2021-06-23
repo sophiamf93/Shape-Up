@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape Up or Shape Out</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+
+</head>
+
+<body>
+
+<div class="my-5" id="screen">
+
+    <div class="container mb-3" id="input-container">
+
+        <div class="input-label">
+            <label for="add-shape">Add A Shape!</label>
+        </div>
+
+        <div class="shapes">
+            <form>
+                <div id="add-rectangle">
+                    <div class="form-group row col-sm-12">
+                        <button class="col-sm-3 btn btn-primary " id="rectangle-btn" type="button">Add
+                            Rectangle</button>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" placeholder="height px" id="rect-height">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" placeholder="width px" id="rect-width">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="add-square">
+                    <div class="form-group row col-sm-12">
+                        <button type="button" class="col-sm-3 btn btn-primary " id="square-btn">Add Square</button>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" placeholder="side length px" id="squ-length">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="add-circle">
+                    <div class="form-group row col-sm-12">
+                        <button type="button" class="col-sm-3 btn btn-primary " id="circle-btn">Add Circle</button>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" placeholder="radius px" id="cir-radius">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="add-triangle">
+                    <div class="form-group row col-sm-12">
+                        <button type="button" class="col-sm-3 btn btn-primary " id="triangle-btn">Add Triangle</button>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" placeholder="height px" id="tri-height">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row row-cols-4">
+
+            <div class="col-8" id="canvas"></div>
+
+            <div class="col-1" id="blank"></div>
+
+            <div class="col-3" id="output">Output
+               
+                <div>
+                    <div class="input-group mt-4 mb-5">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Shape</span>
+                        </div>
+                        <input id="shape-output" type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default">
+                    </div>                 
+                </div>
+
+                <div>
+                    <div class="input-group mb-5">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Height</span>
+                        </div>
+                        <input id="height-output" type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default">
+                    </div>                 
+                </div>
+
+                <div>
+                    <div class="input-group mb-5">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Width</span>
+                        </div>
+                        <input id="width-output" type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default">
+                    </div>                 
+                </div>
+
+                <div>
+                    <div class="input-group mb-5">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Area</span>
+                        </div>
+                        <input id="area-output" type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default">
+                    </div>                 
+                </div>
+
+                <div>
+                    <div class="input-group mb-5">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Perimeter</span>
+                        </div>
+                        <input id="perimeter-output" type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default">
+                    </div>                 
+                </div>
+
+                <div>
+                    <div class="input-group mb-5">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Radius</span>
+                        </div>
+                        <input id="radius-output" type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default">
+                    </div>                 
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

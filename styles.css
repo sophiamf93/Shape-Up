@@ -1,0 +1,54 @@
+.btn-primary {
+    color: #fff;
+    background-color: #84e612;
+    border-color: #007bff;
+}
+
+#input-container {
+    border: solid black 2px;
+}
+
+.input-label {
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+#canvas {
+    border: solid black 2px;
+    height: 600px;
+    width: 600px;
+    background-color:ghostwhite;
+    position: relative;
+}
+
+#output {
+    border: solid black 2px;
+    background-color:orangered;
+    font-size: 30px;
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rectangle {
+    background-color:orange;
+}
+
+.square {
+    background-color:lime;
+}
+
+.circle {
+    background-color:darkviolet;
+    border-radius: 50%;
+}
+
+
+/* .triangle {
+   background-color:;
+} */
